@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3cff99c6-ac77-48fd-9e23-31c9a256c91b": {
+      "ProjectGuid": "3cff99c6-ac77-48fd-9e23-31c9a256c91b",
+      "DisplayName": "AddressBook_FileIO",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
