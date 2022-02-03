@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3cff99c6-ac77-48fd-9e23-31c9a256c91b": {
+      "ProjectGuid": "3cff99c6-ac77-48fd-9e23-31c9a256c91b",
+      "DisplayName": "AddressBook_FileIO",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}
