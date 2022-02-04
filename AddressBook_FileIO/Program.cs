@@ -6,7 +6,6 @@ namespace AddressBook_FileIO
 {
     class Program
     {
-
         AddressBook book;
 
         public Program()
@@ -16,7 +15,6 @@ namespace AddressBook_FileIO
 
         static void Main(string[] args)
         {
-
             Program p = new Program();
 
             Console.WriteLine("Hello, Welcome to Address Book!");

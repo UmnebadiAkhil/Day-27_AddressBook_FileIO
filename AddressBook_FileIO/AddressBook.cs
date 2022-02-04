@@ -35,8 +35,7 @@ namespace AddressBook_FileIO
                 return false;
         }
         public bool RemoveContact(string name)
-        {
-          
+        {          
             Contact c = FindContact(name);
           
             if (c != null)

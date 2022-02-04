@@ -25,7 +25,6 @@ namespace AddressBook_FileIO
 
         public string Email { get; set; }
 
-    
         public Contact(string FirstName, string LastName, string Address, string City, string State, string ZipCode, string PhoneNumber, string Email)
         {
             this.FirstName = FirstName;
