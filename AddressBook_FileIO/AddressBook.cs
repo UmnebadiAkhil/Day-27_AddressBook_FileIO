@@ -9,15 +9,16 @@ namespace AddressBook_FileIO
 {
     public class AddressBook
     {
-        public static List<Contact> People;
+ 
+        public List<Contact> People;
 
         public AddressBook()
         {
             People = new List<Contact>();
         }
-
         public Contact FindContact(string fname)
         {
+
             Contact contact = People.Find((person) => person.FirstName == fname);
             return contact;
         }
@@ -25,7 +26,9 @@ namespace AddressBook_FileIO
         public bool AddContact(string FirstName, string LastName, string Address, string City, string State, string ZipCode, string PhoneNumber, string Email)
         {
             Contact contact = new Contact(FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email);
+
             Contact result = FindContact(FirstName);
+
             if (result == null)
             {
                 People.Add(contact);
@@ -34,10 +37,12 @@ namespace AddressBook_FileIO
             else
                 return false;
         }
+
         public bool RemoveContact(string name)
-        {          
+        {
+
             Contact c = FindContact(name);
-          
+
             if (c != null)
             {
                 People.Remove(c);
