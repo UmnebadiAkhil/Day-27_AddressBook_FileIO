@@ -6,63 +6,36 @@ using System.Threading.Tasks;
 
 namespace AddressBook_FileIO
 {
-    internal class Contact
+    public class Contact
     {
 
-        //list is created to store contact info
-        List<Contact> contacts = new List<Contact>();
+        public string FirstName { get; set; }
 
-        //variables
-        public string first_name;
-        public string last_name;
-        public string address;
-        public string city;
-        public string state;
-        public int zip;
-        public long phone;
-        public string email;
+        public string LastName { get; set; }
 
-        
-        public Contact()
+        public string Address { get; set; }
+
+        public string City { get; set; }
+
+        public string State { get; set; }
+
+        public string ZipCode { get; set; }
+
+        public string PhoneNumber { get; set; }
+
+        public string Email { get; set; }
+
+    
+        public Contact(string FirstName, string LastName, string Address, string City, string State, string ZipCode, string PhoneNumber, string Email)
         {
-
-        }
-
-        
-        public Contact(string first_name, string last_name, string address, string city, string state, int zip, long phone, string email)
-        {
-            this.first_name = first_name;
-            this.last_name = last_name;
-            this.address = address;
-            this.city = city;
-            this.state = state;
-            this.zip = zip;
-            this.phone = phone;
-            this.email = email;
-        }
-
-       
-        public void setContacts(List<Contact> contacts)
-        {
-            this.contacts = contacts;
-        }
-
-        
-        public List<Contact> getContacts()
-        {
-            return contacts;
-        }
-
-        
-        public List<Contact> showContacts()
-        {
-            return contacts;
-        }
-
-        
-        public override string ToString()
-        {
-            return "First Name: " + first_name + " \n" + "Last Name: " + last_name + " \n" + "Address: " + address + " \n" + "City: " + city + " \n" + "State: " + state + " \n" + "Zip: " + zip +" \n" + "Phone Number: " + phone + " \n" + "Email-id: " + email;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Address = Address;
+            this.City = City;
+            this.State = State;
+            this.ZipCode = ZipCode;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
         }
 
     }

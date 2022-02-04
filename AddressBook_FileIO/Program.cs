@@ -1,57 +1,60 @@
 ﻿
-using AddressBook_Collections;
 using System;
 using System.Collections.Generic;
 
-namespace AddressBook
+namespace AddressBook_FileIO
 {
     class Program
     {
+       
+        AddressBook book;
 
-        public static void Main(string[] args)
+        public Program()
         {
-            Console.WriteLine("Welcome to Address Book Program");
-            int choice = 0;
-            while (choice != 2)
+            book = new AddressBook();
+        }
+
+        
+        static void Main(string[] args)
+        {
+            
+            Program p = new Program();
+           
+            Console.WriteLine("Hello, Welcome to Address Book!");
+           
+            Console.WriteLine("Select the option. \n1. Add new contact. \n2. Exit.");
+            int option = int.Parse(Console.ReadLine());
+            switch (option)
             {
-               
-                List<Contact> list = new List<Contact>();
-                Console.WriteLine("\n\t********Main Menu***********\t\n");
-                Console.WriteLine("Enter the following choice");
-                Console.WriteLine("1. Add Contact");
-                Console.WriteLine("2. Exit");
-                Console.WriteLine("Enter your choice: ");
-                choice = Convert.ToInt32(Console.ReadLine());
-
-                switch (choice)
-                {
-                    case 1:
-                        Console.WriteLine("\n Add New Contact: \n");
-                        Console.WriteLine("Enter the firstname: ");
-                        string first_name = Console.ReadLine().ToUpper();
-                        Console.WriteLine("Enter the lastname: ");
-                        string last_name = Console.ReadLine().ToUpper();
-                        Console.WriteLine("Enter the address: ");
-                        string address = Console.ReadLine().ToUpper();
-                        Console.WriteLine("Enter the city: ");
-                        string city = Console.ReadLine().ToUpper();
-                        Console.WriteLine("Enter the state: ");
-                        string state = Console.ReadLine().ToUpper();
-                        Console.WriteLine("Enter the zip: ");
-                        int zip = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("Enter the phone number");
-                        long phone = Convert.ToInt64(Console.ReadLine());
-                        Console.WriteLine("Enter the email: ");
-                        string email = Console.ReadLine().ToLower();
-
-                        Contact ct1 = new Contact(first_name, last_name, address, city, state, zip, phone, email);
-                        list.Add(ct1);
-                        Console.WriteLine("Contact Added Successfully");
+                case 1:
+                    Console.WriteLine("Enter the person details to be added in the address book");
+                    Console.WriteLine("First Name");
+                    string FirstName = Console.ReadLine();
+                    Console.WriteLine("Last Name");
+                    string LastName = Console.ReadLine();
+                    Console.WriteLine("Address");
+                    string Address = Console.ReadLine();
+                    Console.WriteLine("City");
+                    string City = Console.ReadLine();
+                    Console.WriteLine("State");
+                    string State = Console.ReadLine();
+                    Console.WriteLine("Zip code");
+                    string ZipCode = Console.ReadLine();
+                    Console.WriteLine("Phone Number");
+                    string PhoneNumber = Console.ReadLine();
+                    Console.WriteLine("Email");
+                    string Email = Console.ReadLine();
+                    //calling AddContact function
+                    if (p.book.AddContact(FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email))
+                    {
+                        Console.WriteLine("Contact added successfully");
                         break;
-                    case 2:
+                    }
+                    else
+                    {
+                        Console.WriteLine("Contact already exists");
                         break;
-
-                }
+                    }
             }
         }
     }
