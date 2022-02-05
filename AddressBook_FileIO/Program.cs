@@ -7,20 +7,22 @@ namespace AddressBook_FileIO
     {
         static void Main(string[] args)
         {
+      
             AddressBookBinder binder = new AddressBookBinder();
-
-            Console.WriteLine("Welcome to Address Book Program");
+        
+            Console.WriteLine("Hello, Welcome to Address Book");
             int result = 1;
             while (result == 1)
             {
                 Console.WriteLine("Enter the name of the Address Book to be used");
                 string addrName = Console.ReadLine();
+              
                 AddressBook book = new AddressBook();
                 book.People = binder.AddAddrBook(addrName, book.People);
                 int loop = 1;
                 while (loop == 1)
                 {
-                    Console.WriteLine("\nSelect the option. \n1. Add new contact. \n2. Edit existing contact.\n3. Delete Contact \n4. Exit.");
+                    Console.WriteLine("\nSelect the option. \n1. Add new contact. \n2. Edit existing contact.\n3. Delete Contact \n4. Search By City \n5. Exit.");
                     int option = int.Parse(Console.ReadLine());
                     switch (option)
                     {
@@ -94,6 +96,14 @@ namespace AddressBook_FileIO
                                 break;
                             }
                         case 4:
+                            Console.WriteLine("Enter city whose contacts need to be searched");
+                            string city = Console.ReadLine();
+                            foreach (Contact contact in binder.SearchContactsByCity(city))
+                            {
+                                Console.WriteLine("\n\t" + contact.FirstName + "\n\t" + contact.LastName + "\n\t" + contact.Address + "\n\t" + contact.City + "\n\t" + contact.State + "\n\t" + contact.ZipCode + "\n\t" + contact.PhoneNumber + "\n\t" + contact.Email);
+                            }
+                            break;
+                        case 5:
                             loop = 0;
                             break;
                     }
@@ -102,11 +112,11 @@ namespace AddressBook_FileIO
                 Console.WriteLine("Do you want to enter an address book. \n1. yes \n2. no");
                 result = int.Parse(Console.ReadLine());
             }
- 
+   
             foreach (var key in binder.Binder.Keys)
             {
                 Console.WriteLine(key);
-
+                
                 foreach (Contact c in binder.Binder[key])
                 {
                     Console.WriteLine(c.FirstName + "\t" + c.LastName + "\t" + c.Address + "\t" + c.City + "\t" + c.State + "\t" + c.ZipCode + "\t" + c.PhoneNumber + "\t" + c.Email);

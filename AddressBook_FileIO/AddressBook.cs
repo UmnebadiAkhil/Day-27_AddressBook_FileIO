@@ -8,6 +8,7 @@ namespace AddressBook_FileIO
 {
     public class AddressBook
     {
+
         public HashSet<Contact> People;
 
         public AddressBook()
@@ -18,7 +19,7 @@ namespace AddressBook_FileIO
         public Contact FindContact(string fname)
         {
             Contact contact = null;
-
+            
             foreach (var person in People)
             {
                 if (person.FirstName.Equals(fname))
@@ -29,7 +30,6 @@ namespace AddressBook_FileIO
             }
             return contact;
         }
-
 
         public bool AddContact(string FirstName, string LastName, string Address, string City, string State, string ZipCode, string PhoneNumber, string Email)
         {
@@ -48,9 +48,9 @@ namespace AddressBook_FileIO
 
         public bool RemoveContact(string name)
         {
-           
+            
             Contact c = FindContact(name);
-          
+
             if (c != null)
             {
                 People.Remove(c);
