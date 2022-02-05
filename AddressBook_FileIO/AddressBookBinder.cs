@@ -6,9 +6,9 @@ namespace AddressBook_FileIO
 {
     public class AddressBookBinder
     {
- 
+      
         public Dictionary<string, HashSet<Contact>> Binder = new Dictionary<string, HashSet<Contact>>();
-     
+ 
         public List<Contact> City = new List<Contact>();
 
         public Dictionary<string, List<Contact>> CityDictionary = new Dictionary<string, List<Contact>>();
@@ -30,7 +30,7 @@ namespace AddressBook_FileIO
 
         public List<Contact> SortByCity(string cityname)
         {
-           
+
             foreach (var key in Binder.Keys)
             {
 
