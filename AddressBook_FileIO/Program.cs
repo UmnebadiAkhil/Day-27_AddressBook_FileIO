@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace AddressBook_FileIO
@@ -7,17 +6,16 @@ namespace AddressBook_FileIO
     class Program
     {
         static void Main(string[] args)
-        {   
-            AddressBookBinder binder = new AddressBookBinder();   
-            Console.WriteLine("Hello , Welcome to Address Book Program");
+        {
+            AddressBookBinder binder = new AddressBookBinder();
+
+            Console.WriteLine("Welcome to Address Book Program");
             int result = 1;
             while (result == 1)
             {
                 Console.WriteLine("Enter the name of the Address Book to be used");
                 string addrName = Console.ReadLine();
-               
                 AddressBook book = new AddressBook();
-              
                 book.People = binder.AddAddrBook(addrName, book.People);
                 int loop = 1;
                 while (loop == 1)
@@ -108,10 +106,10 @@ namespace AddressBook_FileIO
             foreach (var key in binder.Binder.Keys)
             {
                 Console.WriteLine(key);
-               
+
                 foreach (Contact c in binder.Binder[key])
                 {
-                    Console.WriteLine(c.FirstName + "\n\t" + c.LastName + "\n\t" + c.Address + "\n\t" + c.City + "\n\t" + c.State + "\n\t" + c.ZipCode + "\n\t" + c.PhoneNumber + "\n\t" + c.Email);
+                    Console.WriteLine(c.FirstName + "\t" + c.LastName + "\t" + c.Address + "\t" + c.City + "\t" + c.State + "\t" + c.ZipCode + "\t" + c.PhoneNumber + "\t" + c.Email);
                 }
             }
         }

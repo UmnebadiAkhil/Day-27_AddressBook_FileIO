@@ -1,27 +1,35 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace AddressBook_FileIO
 {
     public class AddressBook
     {
- 
-        public List<Contact> People;
+        public HashSet<Contact> People;
 
         public AddressBook()
         {
-            People = new List<Contact>();
+            People = new HashSet<Contact>();
         }
+
         public Contact FindContact(string fname)
         {
+            Contact contact = null;
 
-            Contact contact = People.Find((person) => person.FirstName == fname);
+            foreach (var person in People)
+            {
+                if (person.FirstName.Equals(fname))
+                {
+                    contact = person;
+                    break;
+                }
+            }
             return contact;
         }
+
 
         public bool AddContact(string FirstName, string LastName, string Address, string City, string State, string ZipCode, string PhoneNumber, string Email)
         {
@@ -40,9 +48,9 @@ namespace AddressBook_FileIO
 
         public bool RemoveContact(string name)
         {
-
+           
             Contact c = FindContact(name);
-
+          
             if (c != null)
             {
                 People.Remove(c);
