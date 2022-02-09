@@ -144,6 +144,8 @@ namespace AddressBook_FileIO
             ReadWrite.ReadFromStreamReader();
             ReadWrite.ImplementCSVDataHandling();
             ReadWrite.WriteCSVFile(data1);
+            ReadWrite.WriteToJsonFile(data1);
+            ReadWrite.ReadJsonFile();
         }
     }
 }

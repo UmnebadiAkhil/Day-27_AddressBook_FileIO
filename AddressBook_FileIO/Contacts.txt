@@ -1,0 +1,4 @@
+Rachel	Green	Damoh Naka	Jabalpur	MP	123456	91-9658745823	abc@gmail.com
+Monica	Geller	Damoh Naka	Jabalpur	UP	485236	91-7458985652	bcd@gmail.com
+Phoebe	Buffay	Sector 4	Bangalore	Karnataka	452985	91-9632587415	sda@gmail,com
+Alexis	Rose	Sector 3	Mumbai	Maharashtra	145856	91-8745985632	pra@gmail.com

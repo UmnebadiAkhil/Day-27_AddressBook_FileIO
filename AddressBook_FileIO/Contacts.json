@@ -1,0 +1,22 @@
+[
+  {
+    "FirstName": "Rachel",
+    "LastName": "Grren",
+    "Address": "Central Perk",
+    "City": "Nevada",
+    "State": "US",
+    "ZipCode": "542652",
+    "PhoneNumber": "91-9856785415",
+    "Email": "abc@gmail.com"
+  },
+  {
+    "FirstName": "Monica",
+    "LastName": "Geller",
+    "Address": "Norway",
+    "City": "Morocco",
+    "State": "UK",
+    "ZipCode": "406452",
+    "PhoneNumber": "91-8569745852",
+    "Email": "bcd@gmail.com"
+  }
+]
