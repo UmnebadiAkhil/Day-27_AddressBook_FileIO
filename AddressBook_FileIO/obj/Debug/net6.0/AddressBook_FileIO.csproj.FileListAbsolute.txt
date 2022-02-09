@@ -13,3 +13,6 @@ C:\Users\akhil\OneDrive\Desktop\TerminalCommands\RFP\Day-27_AddressBook_FileIO\A
 C:\Users\akhil\OneDrive\Desktop\TerminalCommands\RFP\Day-27_AddressBook_FileIO\AddressBook_FileIO\obj\Debug\net6.0\ref\AddressBook_FileIO.dll
 C:\Users\akhil\OneDrive\Desktop\TerminalCommands\RFP\Day-27_AddressBook_FileIO\AddressBook_FileIO\obj\Debug\net6.0\AddressBook_FileIO.pdb
 C:\Users\akhil\OneDrive\Desktop\TerminalCommands\RFP\Day-27_AddressBook_FileIO\AddressBook_FileIO\obj\Debug\net6.0\AddressBook_FileIO.genruntimeconfig.cache
+C:\Users\akhil\OneDrive\Desktop\TerminalCommands\RFP\Day-27_AddressBook_FileIO\AddressBook_FileIO\bin\Debug\net6.0\CsvHelper.dll
+C:\Users\akhil\OneDrive\Desktop\TerminalCommands\RFP\Day-27_AddressBook_FileIO\AddressBook_FileIO\bin\Debug\net6.0\CsvHelper.Excel.dll
+C:\Users\akhil\OneDrive\Desktop\TerminalCommands\RFP\Day-27_AddressBook_FileIO\AddressBook_FileIO\obj\Debug\net6.0\AddressBook_FileIO.csproj.CopyComplete

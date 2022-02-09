@@ -5,12 +5,13 @@ namespace AddressBook_FileIO
 {
     class Program
     {
+
+        public static List<Contact> data1 = new List<Contact>();
+
         static void Main(string[] args)
         {
-
-            //welcome message
-            Console.WriteLine("Hello, Welcome to Address Book");
             AddressBookBinder binder = new AddressBookBinder();
+            Console.WriteLine("Hello, Welcome to Address Book");
             int result = 1;
             while (result == 1)
             {
@@ -133,18 +134,16 @@ namespace AddressBook_FileIO
             }
             foreach (var key in binder.Binder.Keys)
             {
-                data.Add(key);
-                
                 foreach (Contact c in binder.Binder[key])
                 {
-                  data.Add(c.ToString());
+                    data1.Add(c);
                 }
             }
-            Console.WriteLine("Writing contacts in file");
-            
-            ReadWrite.WriteUsingStreamWriter(data);
-         
+            Console.WriteLine("Writing contacts in file : ");
+            ReadWrite.WriteUsingStreamWriter(data1);
             ReadWrite.ReadFromStreamReader();
+            ReadWrite.ImplementCSVDataHandling();
+            ReadWrite.WriteCSVFile(data1);
         }
     }
 }

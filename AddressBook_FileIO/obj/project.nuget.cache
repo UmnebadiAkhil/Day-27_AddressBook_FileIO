@@ -1,8 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "D/ya5CCC7w8qZRZ1bwH/urbdu3zpPgN+yRMouD3hE7eHFPM6/K+Q0+pnfXbxHbcTV0kdRDu3+946CPcexX9txQ==",
+  "dgSpecHash": "p8nHA7kOeIIPlCBcOiI625yC9GlYBcqDjp7Tq9v/7tqvllvBSccW3h1GwtP/3yrQJg538TRJlheXJMpZ4PwRQg==",
   "success": true,
   "projectFilePath": "C:\\Users\\akhil\\OneDrive\\Desktop\\TerminalCommands\\RFP\\Day-27_AddressBook_FileIO\\AddressBook_FileIO\\AddressBook_FileIO.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\akhil\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
+    "C:\\Users\\akhil\\.nuget\\packages\\csvhelper.excel\\1.0.6\\csvhelper.excel.1.0.6.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'CsvHelper.Excel 1.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "CsvHelper.Excel",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
