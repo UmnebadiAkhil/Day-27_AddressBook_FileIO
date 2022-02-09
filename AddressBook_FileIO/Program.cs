@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace AddressBook_FileIO
 {
@@ -132,13 +133,18 @@ namespace AddressBook_FileIO
             }
             foreach (var key in binder.Binder.Keys)
             {
-                Console.WriteLine(key);
+                data.Add(key);
                 
                 foreach (Contact c in binder.Binder[key])
                 {
-                    Console.WriteLine(c.FirstName + "\n\t" + c.LastName + "\n\t" + c.Address + "\n\t" + c.City + "\n\t" + c.State + "\n\t" + c.ZipCode + "\n\t" + c.PhoneNumber + "\n\t" + c.Email);
+                  data.Add(c.ToString());
                 }
             }
+            Console.WriteLine("Writing contacts in file");
+            
+            ReadWrite.WriteUsingStreamWriter(data);
+         
+            ReadWrite.ReadFromStreamReader();
         }
     }
 }
