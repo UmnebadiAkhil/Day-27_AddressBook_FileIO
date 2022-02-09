@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AddressBook_FileIO
+﻿namespace AddressBook_FileIO
 {
     public class AddressBookBinder
     {
-      
+
         public Dictionary<string, HashSet<Contact>> Binder = new Dictionary<string, HashSet<Contact>>();
- 
+
         public List<Contact> City = new List<Contact>();
 
         public Dictionary<string, List<Contact>> CityDictionary = new Dictionary<string, List<Contact>>();
@@ -27,26 +23,51 @@ namespace AddressBook_FileIO
                 return Binder[key];
             }
         }
-
-        public List<Contact> SortByCity(string cityname)
+        public List<string> DistinctCities()
         {
-
+          
+            List<string> City = new List<string>();
+           
             foreach (var key in Binder.Keys)
             {
-
                 foreach (Contact c in Binder[key])
                 {
-                    if (c.City == cityname)
-                        City.Add(c);
+                    if (City.Contains(c.City))
+                        break;
+                    else
+                        City.Add(c.City);
                 }
             }
             return City;
         }
-
-        public List<Contact> SearchContactsByCity(string city)
+        public void CreateDictionary()
         {
-            CityDictionary[city] = SortByCity(city);
-            return CityDictionary[city];
+            
+            List<string> City1 = DistinctCities();
+     
+            foreach (string city in City1)
+            {
+             
+                List<Contact> CityContact = new List<Contact>();
+                foreach (var key in Binder.Keys)
+                {
+                    foreach (Contact c in Binder[key])
+                    {
+                        if (c.City == city)
+                            CityContact.Add(c);
+                    }
+                }
+                
+                if (this.CityDictionary.ContainsKey(city))
+                    CityDictionary[city] = CityContact;
+                else
+                    CityDictionary.Add(city, CityContact);
+            }
+        }
+
+        internal IEnumerable<Contact> SearchContactsByCity(string? city)
+        {
+            throw new NotImplementedException();
         }
     }
 }

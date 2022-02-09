@@ -1,10 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-
-namespace AddressBook_FileIO
+﻿namespace AddressBook_FileIO
 {
     public class AddressBook
     {

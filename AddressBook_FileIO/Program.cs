@@ -1,28 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace AddressBook_FileIO
+﻿namespace AddressBook_FileIO
 {
     class Program
     {
         static void Main(string[] args)
         {
-      
-            AddressBookBinder binder = new AddressBookBinder();
-        
+
+            //welcome message
             Console.WriteLine("Hello, Welcome to Address Book");
+            
+            AddressBookBinder binder = new AddressBookBinder();
             int result = 1;
             while (result == 1)
             {
                 Console.WriteLine("Enter the name of the Address Book to be used");
                 string addrName = Console.ReadLine();
-              
                 AddressBook book = new AddressBook();
                 book.People = binder.AddAddrBook(addrName, book.People);
                 int loop = 1;
                 while (loop == 1)
                 {
-                    Console.WriteLine("\nSelect the option. \n1. Add new contact. \n2. Edit existing contact.\n3. Delete Contact \n4. Search By City \n5. Exit.");
+                    Console.WriteLine("\nSelect the option. \n1. Add new contact. \n2. Edit existing contact.\n3. Delete Contact \n4. Search By City \n5. Count citywise contacts \n6. Exit.");
                     int option = int.Parse(Console.ReadLine());
                     switch (option)
                     {
@@ -98,21 +95,28 @@ namespace AddressBook_FileIO
                         case 4:
                             Console.WriteLine("Enter city whose contacts need to be searched");
                             string city = Console.ReadLine();
-                            foreach (Contact contact in binder.SearchContactsByCity(city))
+                            foreach (Contact contact in binder.CityDictionary[city])
                             {
-                                Console.WriteLine("\n\t" + contact.FirstName + "\n\t" + contact.LastName + "\n\t" + contact.Address + "\n\t" + contact.City + "\n\t" + contact.State + "\n\t" + contact.ZipCode + "\n\t" + contact.PhoneNumber + "\n\t" + contact.Email);
+                                Console.WriteLine(contact.FirstName + "\t" + contact.LastName + "\t" + contact.Address + "\t" + contact.City + "\t" + contact.State + "\t" + contact.ZipCode + "\t" + contact.PhoneNumber + "\t" + contact.Email);
                             }
                             break;
                         case 5:
+                            foreach (var key in binder.CityDictionary.Keys)
+                            {
+                                Console.WriteLine(key + "\t" + binder.CityDictionary[key].Count);
+                            }
+                            break;
+                        case 6:
                             loop = 0;
                             break;
                     }
+                    binder.Binder[addrName] = (book.People);
+                    binder.CreateDictionary();
                 }
-                binder.Binder[addrName] = (book.People);
                 Console.WriteLine("Do you want to enter an address book. \n1. yes \n2. no");
                 result = int.Parse(Console.ReadLine());
             }
-   
+
             foreach (var key in binder.Binder.Keys)
             {
                 Console.WriteLine(key);
