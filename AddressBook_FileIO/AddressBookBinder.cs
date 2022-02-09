@@ -65,9 +65,5 @@
             }
         }
 
-        internal IEnumerable<Contact> SearchContactsByCity(string? city)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
